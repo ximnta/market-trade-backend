@@ -1,0 +1,26 @@
+<div style="padding-bottom: 2em;">
+    Country: <input type="text" ng-model="country">
+    Currency From: <input type="text" ng-model="from">
+    Currency To: <input type="text" ng-model="to">
+</div>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col" ng-repeat="title in $ctrl.titles">{{ title }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="msg in $ctrl.messages | filter: {country: country, currencyFrom: from, currencyTo: to}">
+            <td>{{ msg.userId }}</td>
+            <td>{{ msg.currencyFrom }}</td>
+            <td>{{ msg.currencyTo }}</td>
+            <td>{{ msg.amountSell }}</td>
+            <td>{{ msg.amountBuy }}</td>
+            <td>{{ msg.rate }}</td>
+            <td>{{ msg.timePlaced }}</td>
+            <td>{{ msg.originatingCountry }}</td>
+        </tr>
+    </tbody>
+</table>
+

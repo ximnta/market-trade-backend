@@ -1,0 +1,23 @@
+<div>   
+        <div class="container" style="padding-bottom: 1em;">
+                <div class="row align-items-end">
+                        <select class="col-6 offset-6 custom-select"
+                                name="allTrades" 
+                                id="allTrades" 
+                                ng-model="$ctrl.selectedTrade"
+                                ng-change="$ctrl.updateChart()">
+                                <option ng-repeat="trade in $ctrl.allTrades" 
+                                        value="{{trade}}">{{trade}}
+                                </option>
+                        </select>
+                </div>
+        </div>
+        <canvas id="line" 
+                class="chart chart-line" 
+                chart-data="$ctrl.data"
+                chart-labels="$ctrl.labels" 
+                chart-series="$ctrl.series" 
+                chart-options="$ctrl.options"
+                chart-click="$ctrl.onClick">
+        </canvas>
+</div>
