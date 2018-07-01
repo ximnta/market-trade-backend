@@ -9,7 +9,7 @@ Deployed on: https://vast-plains-13972.herokuapp.com/
 Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cli.heroku.com/) installed.
 
 ```sh
-$ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
+$ git clone https://github.com/ximnta/market-trade-backend.git # or clone your own fork
 $ cd market-trade-backend
 $ npm install
 $ npm start
