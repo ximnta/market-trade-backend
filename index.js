@@ -31,4 +31,10 @@ app.get('/api/trademsg', function(req, res) {
   res.send(JSON.stringify(tradeList, null, 2));
 });
 
+// GET
+app.get('/api/reset', function(req, res) {
+  tradeList = [];
+  res.send("Data reset");
+});
+
 app.listen(PORT);
