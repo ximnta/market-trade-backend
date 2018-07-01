@@ -1,4 +1,4 @@
-# market-trade-processor-b
+# market-trade-backend
 
 Node.js app using [Express 4](http://expressjs.com/).
 
@@ -8,7 +8,7 @@ Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cl
 
 ```sh
 $ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
-$ cd market-trade-processor-b
+$ cd market-trade-backend
 $ npm install
 $ npm start
 ```

@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
+let tradeList = [];
 
 app.use(express.static('public'));
 
@@ -16,19 +17,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // parse application/json
 app.use(bodyParser.json());
 
-// var tradeList = [];
-var tradeList = require('./mock.json');
-
-// POST:
+// POST
 app.post('/api/trademsg', function(req, res) {
   
-  var t = req.body;
+  let t = req.body;
 
   tradeList.push(t);
   res.send(JSON.stringify(t, null, 2));
 });
 
-// GET:
+// GET
 app.get('/api/trademsg', function(req, res) {
   res.send(JSON.stringify(tradeList, null, 2));
 });

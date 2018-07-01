@@ -1,7 +1,7 @@
 {
-  "name": "market-trade",
+  "name": "market-trade-backend",
   "version": "0.3.0",
-  "description": "market trade processor",
+  "description": "market trade backend",
   "engines": {
     "node": "8.9.1"
   },
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/ximnta/market-trade-backend"
   },
   "keywords": [
     "node",
