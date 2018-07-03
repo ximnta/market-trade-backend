@@ -1,0 +1,76 @@
+{
+    "$id": "https://vast-plains-13972.herokuapp.com/",
+    "type": "object",
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "properties": {
+      "userId": {
+        "$id": "/properties/userId",
+        "type": "string",
+        "title": "The User ID",
+        "examples": [
+          "134256"
+        ]
+      },
+      "currencyFrom": {
+        "$id": "/properties/currencyFrom",
+        "type": "string",
+        "title": "The Currency From",
+        "examples": [
+          "EUR"
+        ]
+      },
+      "currencyTo": {
+        "$id": "/properties/currencyTo",
+        "type": "string",
+        "title": "The Currency To",
+        "examples": [
+          "GBP"
+        ]
+      },
+      "amountSell": {
+        "$id": "/properties/amountSell",
+        "type": "number",
+        "title": "The Amount Sell",
+        "exclusiveMinimum": 0,
+        "examples": [
+          1000
+        ]
+      },
+      "amountBuy": {
+        "$id": "/properties/amountBuy",
+        "type": "number",
+        "title": "The Amount Buy",
+        "exclusiveMinimum": 0,
+        "examples": [
+          747.0999755859375
+        ]
+      },
+      "rate": {
+        "$id": "/properties/rate",
+        "type": "number",
+        "title": "The Rate",
+        "exclusiveMinimum": 0,
+        "examples": [
+          0.7470999956130981
+        ]
+      },
+      "timePlaced": {
+        "$id": "/properties/timePlaced",
+        "type": "string",
+        "title": "The Time Placed",
+        "examples": [
+          "24-JAN-15 10:27:44"
+        ]
+      },
+      "originatingCountry": {
+        "$id": "/properties/originatingCountry",
+        "type": "string",
+        "title": "The Originating Country",
+        "examples": [
+          "FR"
+        ]
+      }
+    },
+    "required": [ "userId", "currencyFrom", "currencyTo", "amountSell", "amountBuy", "rate", "timePlaced", "originatingCountry" ]
+  }
