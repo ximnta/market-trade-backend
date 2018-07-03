@@ -1,26 +1,60 @@
-<div style="padding-bottom: 2em;">
-    Country: <input type="text" ng-model="country">
-    Currency From: <input type="text" ng-model="from">
-    Currency To: <input type="text" ng-model="to">
+<div class="filter-table">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4">
+            <label for="country">Country:</label>
+            <input type="text" name="country" ng-model="$ctrl.country" ng-change="$ctrl.filterMessages()">
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <label for="from">Currency From:</label>
+            <input type="text" name="from" ng-model="$ctrl.from" ng-change="$ctrl.filterMessages()">
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <label for="to">Currency To: </label>
+            <input type="text" name="to" ng-model="$ctrl.to" ng-change="$ctrl.filterMessages()">
+        </div>
+    </div>
 </div>
 
-<table class="table">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col" ng-repeat="title in $ctrl.titles">{{ title }}</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="msg in $ctrl.messages | filter: {country: country, currencyFrom: from, currencyTo: to}">
-            <td>{{ msg.userId }}</td>
-            <td>{{ msg.currencyFrom }}</td>
-            <td>{{ msg.currencyTo }}</td>
-            <td>{{ msg.amountSell }}</td>
-            <td>{{ msg.amountBuy }}</td>
-            <td>{{ msg.rate }}</td>
-            <td>{{ msg.timePlaced }}</td>
-            <td>{{ msg.originatingCountry }}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="table-responsive">
+    <table class="table table-sm table-bordered">
+        <thead class="bg-primary text-white text-center">
+            <tr>
+                <th ng-repeat="title in $ctrl.titles">{{ title }}</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr ng-repeat="msg in $ctrl.messages | limitTo: $ctrl.pageSize:$ctrl.page*$ctrl.pageSize-$ctrl.pageSize">
+                <td>{{ msg.userId }}</td>
+                <td>{{ msg.currencyFrom }}</td>
+                <td>{{ msg.currencyTo }}</td>
+                <td>{{ msg.amountSell }}</td>
+                <td>{{ msg.amountBuy }}</td>
+                <td>{{ msg.rate }}</td>
+                <td>{{ msg.timePlaced }}</td>
+                <td>{{ msg.originatingCountry }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="table-pagination d-flex justify-content-center align-items-center padding-top">
+    <div>
+        <button ng-show="$ctrl.page>1" 
+                ng-click="$ctrl.page=$ctrl.page-1" 
+                class="btn btn-primary btn-sm table-pagination__btn">
+            <i class="fas fa-angle-double-left"></i>
+        </button>
+    </div>
+    <div class="table-pagination__text">Page {{$ctrl.page}} of {{$ctrl.totalPages}}</div>
+    <div>
+        <button ng-show="$ctrl.page*$ctrl.pageSize<$ctrl.messages.length"
+                ng-click="$ctrl.page=$ctrl.page+1"
+                class="btn btn-primary btn-sm table-pagination__btn">
+            <i class="fas fa-angle-double-right"></i>
+        </button>
+    </div>
+</div>
+
+  
+
 
